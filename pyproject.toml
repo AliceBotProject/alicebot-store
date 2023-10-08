@@ -1,0 +1,44 @@
+[project]
+name = "issue-ops"
+version = "0.1.0"
+requires-python = ">=3.9"
+dependencies = ["alicebot>=0.8.0", "requests>=2.31.0"]
+
+[tool.pdm.dev-dependencies]
+lint = ["black", "ruff"]
+
+[tool.black]
+target-version = ["py38", "py39", "py310", "py311"]
+
+[tool.ruff]
+line-length = 88
+select = ["ALL"]
+ignore = [
+  "C90",    # mccabe
+  "FBT",    # flake8-boolean-trap
+  "COM",    # flake8-commas
+  "INP",    # flake8-no-pep420
+  "T20",    # flake8-print
+  "D415",   # First line should end with a period, question mark, or exclamation point
+  "ANN101", # Missing type annotation for self
+  "ANN102", # Missing type annotation for cls
+  "RUF001", # String contains ambiguous
+  "RUF002", # Docstring contains ambiguous
+  "RUF003", # Comment contains ambiguous
+]
+target-version = "py38"
+
+[tool.ruff.pydocstyle]
+convention = "google"
+
+[tool.pyright]
+pythonVersion = "3.8"
+pythonPlatform = "All"
+typeCheckingMode = "strict"
+reportCallInDefaultInitializer = true
+reportImplicitOverride = true
+reportImportCycles = true
+reportPropertyTypeMismatch = true
+reportShadowedImports = true
+reportUninitializedInstanceVariable = true
+reportUnnecessaryTypeIgnoreComment = true
