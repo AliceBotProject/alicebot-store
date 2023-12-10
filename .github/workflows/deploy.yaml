@@ -2,18 +2,17 @@ name: Deploy JSON Files
 
 on:
   push:
-    branches: 
+    branches:
       - "main"
     paths:
-      - 'bots.json'
-      - 'adapters.json'
-      - 'plugins.json'
+      - "bots.json"
+      - "adapters.json"
+      - "plugins.json"
 
 permissions:
   contents: read
   pages: write
   id-token: write
-
 
 concurrency:
   group: "pages"
@@ -28,7 +27,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-        
+
       - name: Create public directory
         run: mkdir public
 
@@ -37,12 +36,12 @@ jobs:
           jq --compact-output . bots.json > public/bots.json
           jq --compact-output . adapters.json > public/adapters.json
           jq --compact-output . plugins.json > public/plugins.json
-          
+
       - name: Upload Artifact
         uses: actions/upload-pages-artifact@v2
         with:
-          path: './public'
-          
+          path: "./public"
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2

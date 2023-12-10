@@ -1,11 +1,9 @@
 """内部使用的实用工具。"""
-from __future__ import annotations
-
+import json
 import os
+import urllib.request
 from pathlib import Path
 from typing import Any
-
-import requests
 
 
 def set_action_outputs(output_pairs: dict[str, str]) -> None:
@@ -29,15 +27,12 @@ class PyPi:
         self.name: str = name
 
         target_url = f"{self.PYPI_BASE_URL}/{self.name}/json"
-        response = requests.get(target_url, timeout=5)
-        if response.status_code != requests.codes.ok:
-            msg = "pypi_name 检查出错"
-            raise ValueError(msg)
-        res = response.json()
+        with urllib.request.urlopen(target_url, timeout=5) as response:  # noqa: S310
+            res = json.load(response)
         if not isinstance(res, dict) or "info" not in res or not res["info"]:
             msg = "请求插件 PyPi 信息失败"
             raise ValueError(msg)
-        self.data: dict[str, Any] = response.json()["info"]
+        self.data: dict[str, Any] = res["info"]
 
     def check_pypi(self) -> None:
         """检查 pypi_name。"""
