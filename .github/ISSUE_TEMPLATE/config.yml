@@ -1,10 +1,10 @@
 blank_issues_enabled: false
 contact_links:
   - name: Report Issue
-    url: https://docs.alicebot.dev/
+    url: https://github.com/AliceBotProject/alicebot/issues/new
     about: Report the issue.
   - name: Share an extension idea
-    url: https://docs.alicebot.dev/
+    url: https://github.com/AliceBotProject/alicebot/issues/new
     about: Have an idea for an extension? Share it with us!
   - name: Need Help
     url: https://docs.alicebot.dev/

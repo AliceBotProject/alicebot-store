@@ -1,0 +1,19 @@
+name: Publish a adapter
+description: Submit your adapter to be automatically validated and published on the store.
+title: "[adapter]: {name}"
+body:
+  - type: input
+    id: pypi_name
+    attributes:
+      label: pypi_name
+      description: PyPI 项目名
+    validations:
+      required: true
+
+  - type: input
+    id: module_name
+    attributes:
+      label: module_name
+      description: import 时的包名
+    validations:
+      required: true
