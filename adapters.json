@@ -1,1 +1,9 @@
-[]
+[
+  {
+    "name": "OneBot v11 (CQHTTP)",
+    "time": 1714226072,
+    "is_official": false,
+    "pypi_name": "alicebot-adapter-cqhttp",
+    "module_name": "alicebot.adapter.cqhttp"
+  }
+]
