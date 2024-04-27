@@ -19,5 +19,12 @@
     "is_official": false,
     "pypi_name": "alicebot-adapter-mirai",
     "module_name": "alicebot.adapter.mirai"
+  },
+  {
+    "name": "DingTalk",
+    "time": 1714226682,
+    "is_official": false,
+    "pypi_name": "alicebot-adapter-dingtalk",
+    "module_name": "alicebot.adapter.dingtalk"
   }
 ]
