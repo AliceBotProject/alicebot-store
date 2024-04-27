@@ -1,1 +1,9 @@
-[]
+[
+  {
+    "name": "alicebot-plugin-template",
+    "time": 1714224960,
+    "is_official": false,
+    "pypi_name": "alicebot-plugin-template",
+    "module_name": "alicebot_plugin_template"
+  }
+]
