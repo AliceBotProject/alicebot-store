@@ -5,5 +5,12 @@
     "is_official": false,
     "pypi_name": "alicebot-adapter-cqhttp",
     "module_name": "alicebot.adapter.cqhttp"
+  },
+  {
+    "name": "Mirai",
+    "time": 1714226407,
+    "is_official": false,
+    "pypi_name": "alicebot-adapter-mirai",
+    "module_name": "alicebot.adapter.mirai"
   }
 ]
