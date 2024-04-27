@@ -12,5 +12,12 @@
     "is_official": false,
     "pypi_name": "alicebot-adapter-onebot",
     "module_name": "alicebot.adapter.onebot"
+  },
+  {
+    "name": "Mirai",
+    "time": 1714226586,
+    "is_official": false,
+    "pypi_name": "alicebot-adapter-mirai",
+    "module_name": "alicebot.adapter.mirai"
   }
 ]
