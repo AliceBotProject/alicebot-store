@@ -26,5 +26,12 @@
     "is_official": false,
     "pypi_name": "alicebot-adapter-dingtalk",
     "module_name": "alicebot.adapter.dingtalk"
+  },
+  {
+    "name": "APScheduler",
+    "time": 1714226758,
+    "is_official": false,
+    "pypi_name": "alicebot-adapter-apscheduler",
+    "module_name": "alicebot.adapter.apscheduler"
   }
 ]
