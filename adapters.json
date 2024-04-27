@@ -2,35 +2,35 @@
   {
     "name": "OneBot v11 (CQHTTP)",
     "time": 1714226072,
-    "is_official": false,
+    "is_official": true,
     "pypi_name": "alicebot-adapter-cqhttp",
     "module_name": "alicebot.adapter.cqhttp"
   },
   {
     "name": "OneBot v12",
     "time": 1714226287,
-    "is_official": false,
+    "is_official": true,
     "pypi_name": "alicebot-adapter-onebot",
     "module_name": "alicebot.adapter.onebot"
   },
   {
     "name": "Mirai",
     "time": 1714226586,
-    "is_official": false,
+    "is_official": true,
     "pypi_name": "alicebot-adapter-mirai",
     "module_name": "alicebot.adapter.mirai"
   },
   {
     "name": "DingTalk",
     "time": 1714226682,
-    "is_official": false,
+    "is_official": true,
     "pypi_name": "alicebot-adapter-dingtalk",
     "module_name": "alicebot.adapter.dingtalk"
   },
   {
     "name": "APScheduler",
     "time": 1714226758,
-    "is_official": false,
+    "is_official": true,
     "pypi_name": "alicebot-adapter-apscheduler",
     "module_name": "alicebot.adapter.apscheduler"
   }
