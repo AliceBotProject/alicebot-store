@@ -2,7 +2,7 @@
   {
     "name": "AliceBot 机器人示例",
     "time": 1714227887,
-    "is_official": false,
+    "is_official": true,
     "description": "AliceBot-Example 是一个 AliceBot 机器人示例，包含许多实用的插件，开箱即用。",
     "author": "st1020",
     "homepage": "https://github.com/AliceBotProject/alicebot-example",

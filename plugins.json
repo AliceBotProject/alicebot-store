@@ -2,7 +2,7 @@
   {
     "name": "alicebot-plugin-template",
     "time": 1714224960,
-    "is_official": false,
+    "is_official": true,
     "pypi_name": "alicebot-plugin-template",
     "module_name": "alicebot_plugin_template"
   }
