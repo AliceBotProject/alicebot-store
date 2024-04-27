@@ -5,5 +5,12 @@
     "is_official": false,
     "pypi_name": "alicebot-adapter-cqhttp",
     "module_name": "alicebot.adapter.cqhttp"
+  },
+  {
+    "name": "OneBot v12",
+    "time": 1714226287,
+    "is_official": false,
+    "pypi_name": "alicebot-adapter-onebot",
+    "module_name": "alicebot.adapter.onebot"
   }
 ]
