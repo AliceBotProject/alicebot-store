@@ -39,10 +39,19 @@ logging.basicConfig(stream=sys.stdout, level=logging.INFO)
 logger = logging.getLogger()
 
 
-def run_subprocess(command: str, env: dict[str, str] | None = None) -> None:
+def run_subprocess(command: str, env: dict[str, str] | None = None) -> str:
     """在子进程中运行命令。"""
     logger.info("Run command: %s", command)
-    subprocess.run(command, timeout=60, check=True, shell=True, env=env)  # noqa: S602
+    return subprocess.run(  # noqa: S602
+        command,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.STDOUT,
+        shell=True,
+        timeout=60,
+        check=True,
+        text=True,
+        env=env,
+    ).stdout
 
 
 class RepoInfo(BaseModel):
@@ -110,7 +119,7 @@ class BaseData(ABC, BaseModel):
     is_official: bool
 
     @abstractmethod
-    def validate_data(self) -> None:
+    def validate_data(self) -> str:
         """验证数据。"""
 
     @abstractmethod
@@ -140,14 +149,14 @@ class _PluginAdapterData(BaseData):
     pypi_name: str
     module_name: str
 
-    def validate_data(self) -> None:
+    def validate_data(self) -> str:
         """验证数据。"""
         httpx.get(
             f"https://pypi.org/pypi/{self.pypi_name}/json",
             timeout=5,
         ).raise_for_status()
 
-        run_subprocess(
+        return run_subprocess(
             f"uv run --with 'alicebot' --with '{self.pypi_name}' "
             f"test.py {self.__value__} {self.module_name}"
         )
@@ -183,8 +192,9 @@ class BotData(BaseData):
     homepage: str
     tags: str
 
-    def validate_data(self) -> None:
+    def validate_data(self) -> str:
         """验证数据。"""
+        return ""
 
     def to_file_path(self) -> Path:
         """获取文件路径。"""
@@ -392,7 +402,7 @@ def main() -> NoReturn:
     # 验证插件和适配器是否可以在 pypi 中找到，和是否可以正常加载
     try:
         logging.info("Start validation")
-        data.validate_data()
+        validate_info = data.validate_data()
     except Exception as e:
         issue.execute_result(RunResult.VALIDATION_FAILED, exception=e)
 
@@ -429,6 +439,7 @@ def main() -> NoReturn:
     issue.execute_result(
         RunResult.VALIDATION_SUCCESS,
         pull_request_url=r.parsed_data.html_url,
+        validate_info=validate_info,
     )
 
 
