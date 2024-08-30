@@ -3,6 +3,8 @@
 
 # AliceBot 商店
 
-[https://alicebot.dev](https://alicebot.dev)
+<https://docs.alicebot.dev/store/>
 
 </div>
+
+请查看文档了解如何发布插件：<https://docs.alicebot.dev/develop/plugin>
