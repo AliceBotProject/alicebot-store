@@ -5,5 +5,12 @@
     "is_official": true,
     "pypi_name": "alicebot-plugin-template",
     "module_name": "alicebot_plugin_template"
+  },
+  {
+    "name": "mirai-repeater",
+    "time": 1725030901,
+    "is_official": false,
+    "pypi_name": "alicebot-plugin-mirai-repeater",
+    "module_name": "alicebot-plugin-mirai-repeater"
   }
 ]
