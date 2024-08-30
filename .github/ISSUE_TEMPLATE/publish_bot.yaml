@@ -1,6 +1,6 @@
 name: Publish a bot
 description: Submit your bot to be automatically validated and published on the store.
-title: "[bot]: {name}"
+title: "bot: {name}"
 body:
   - type: input
     id: description

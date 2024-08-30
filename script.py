@@ -206,7 +206,7 @@ Data: TypeAlias = PluginData | AdapterData | BotData
 
 def parse_title(title: str) -> tuple[type[Data], str]:
     """解析标题。"""
-    result = re.match(r"\[(.+)\]:\s*(.+)", title)
+    result = re.match(r"(.+):\s*(.+)", title)
     if result is None:
         raise ValueError("标题格式错误")
     match result.group(1):

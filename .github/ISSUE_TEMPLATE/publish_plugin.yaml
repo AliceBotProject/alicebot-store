@@ -1,6 +1,6 @@
 name: Publish a plugin
 description: Submit your plugin to be automatically validated and published on the store.
-title: "[plugin]: {name}"
+title: "plugin: {name}"
 body:
   - type: input
     id: pypi_name

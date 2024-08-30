@@ -1,6 +1,6 @@
 name: Publish a adapter
 description: Submit your adapter to be automatically validated and published on the store.
-title: "[adapter]: {name}"
+title: "adapter: {name}"
 body:
   - type: input
     id: pypi_name
