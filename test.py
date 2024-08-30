@@ -5,7 +5,7 @@ import sys
 import structlog
 from alicebot.bot import Bot
 
-_, MODULE_NAME, TYPE = sys.argv
+_, TYPE, MODULE_NAME = sys.argv
 
 
 class PrintLogger:

@@ -4,15 +4,8 @@ version = "0.1.0"
 requires-python = ">=3.10"
 dependencies = ["markdown-it-py>=3.0.0", "githubkit>=0.11.2", "httpx>=0.27.0"]
 
-[tool.pdm]
-distribution = false
-
-[tool.pdm.dev-dependencies]
-lint = ["ruff"]
-dev = ["alicebot"]
-
-[tool.pdm.scripts.start]
-call = "src:main"
+[tool.uv]
+dev-dependencies = ["alicebot"]
 
 [tool.ruff]
 line-length = 88
@@ -21,18 +14,14 @@ target-version = "py310"
 [tool.ruff.lint]
 select = ["ALL"]
 ignore = [
-  "FBT",    # flake8-boolean-trap
-  "COM",    # flake8-commas
-  "EM",     # flake8-errmsg
-  "D415",   # First line should end with a period, question mark, or exclamation point
-  "ANN101", # Missing type annotation for self
-  "ANN102", # Missing type annotation for cls
-  "BLE001", # Do not catch blind exception
-  "TRY003", # Avoid specifying long messages outside the exception class
-  "RUF001", # String contains ambiguous
-  "RUF002", # Docstring contains ambiguous
-  "RUF003", # Comment contains ambiguous
+    "FBT",    # flake8-boolean-trap
+    "COM",    # flake8-commas
+    "EM",     # flake8-errmsg
+    "D415",   # First line should end with a period, question mark, or exclamation point
+    "BLE001", # Do not catch blind exception
+    "TRY003", # Avoid specifying long messages outside the exception class
 ]
+allowed-confusables = ["，", "：", "！"]
 
 [tool.ruff.lint.pydocstyle]
 convention = "google"
